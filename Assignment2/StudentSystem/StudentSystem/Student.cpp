@@ -12,7 +12,7 @@ int Student::getTotalECs() {
 	int ecs = 0;
 	vector<Module*>::iterator it = myModules.begin();
 	while (it != myModules.end()) {
-		ecs += (*it)->assignedECs;
+		ecs += (*it)->getAssignedECs();
 		it++;
 	}
 

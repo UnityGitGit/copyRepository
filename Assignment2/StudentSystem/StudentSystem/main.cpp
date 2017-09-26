@@ -12,7 +12,7 @@ int main() {
 	Module* coreArt = new Module(3, "Game Art", *tRaf);
 	Module* newTechnologies = new Module(2, "New Technologies", *tValentijn);
 	Module* coreDevelopment = new Module(3, "Game Development", *tAron);
-	
+
 	vector<Module*> allModules;
 	allModules.push_back(coreArt);
 	allModules.push_back(newTechnologies);
@@ -46,9 +46,9 @@ int main() {
 		}
 		itStudents++;
 	}
-	
+
 	//print modules with their teachers:
-	cout << "Modules with teachers ---------" << endl;
+	cout << "Modules with teachers: doesnt work :( ---------" << endl;
 	while (itModules != allModules.end()) {//werkt niet.... geen idee waarom :(
 		//cout << (*itModules)->getName() << " has " << (*itModules)->getTeacherName() << " as teacher" << endl;
 		itModules++;
@@ -58,18 +58,22 @@ int main() {
 	//print total ecs for each student:
 	cout << "Students with ecs -------------" << endl;
 	itStudents = students.begin();
-	while (itStudents != students.end()) {
+	while (itStudents != students.end()) {//werkt ook niet, het aantal ecs klopt totaal niet...
 		cout << (*itStudents)->getName() << " has " << (*itStudents)->getTotalECs() << " ECs" << endl;
 		itStudents++;
 	}
 	cout << endl;
 
-	//pause the 'game'
+	//tell a nice story:
+	cout << "You hear rumours about Game Art changing to a value of only 1 EC" << endl << endl;
 	cout << "Press a key to continue..." << endl << endl;
-	cin.get();
 
 	//reassign 1 ec to game art
 	coreArt->assignECs(1);
+
+	//pause the 'game'
+	cin.get();
+
 	//print total ecs for each student again:
 	cout << "Students with ecs -------------" << endl;
 	itStudents = students.begin();

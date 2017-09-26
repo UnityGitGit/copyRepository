@@ -14,6 +14,10 @@ string Module::getTeacherName() {
 	return teacher->getName();
 }
 
+int Module::getAssignedECs() {
+	return assignedECs;
+}
+
 void Module::assignECs(int ec) {
 	assignedECs = ec;
 }

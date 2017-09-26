@@ -8,11 +8,12 @@ using namespace std;
 class Module {
 public:
 	Module(int ec, string n, Teacher t);
-	int assignedECs;
 	string getName();
 	string getTeacherName();
 	void assignECs(int ec);
+	int getAssignedECs();
 private:
+	int assignedECs;
 	string name;
 	Teacher* teacher;
 };
