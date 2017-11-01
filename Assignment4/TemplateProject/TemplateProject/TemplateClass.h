@@ -3,19 +3,19 @@
 #include <vector>
 using namespace std;
 
-template<typename T>
+template<typename A_Type>
 class TemplateClass {
 public:
-	void put(T newElement) {
+	void put(A_Type newElement) {
 		allElements.push_back(newElement);
 	}
-	T pop() {
-		T firstElement = allElements.at(0);
+	A_Type pop() {
+		A_Type firstElement = allElements.at(0);
 		return firstElement;
 	}
 	int size() {
 		return allElements.size();
 	}
 private:
-	vector<T> allElements;
+	vector<A_Type> allElements;
 };

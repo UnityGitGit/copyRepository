@@ -3,20 +3,20 @@
 #include <vector>
 #include <string>
 
-template<typename T>
-vector<T> sortedVectorArr(vector<T> arr) {
+template<typename A_Type>
+vector<A_Type> sortedVectorArr(vector<A_Type> arr) {
 	int arrSize = arr.size();
 	if (arrSize < 2)
 		return arr;
 
-	vector<T> newArr;
+	vector<A_Type> newArr;
 
 	for (int i = 0; i < arrSize; i ++) {
 		//get index of smallest element
 		int smallestIndx = smallestElementIndx(arr);
 
 		//bring smallest element to front of new array and remove it from old array
-		T temp = arr.at(smallestIndx);
+		A_Type temp = arr.at(smallestIndx);
 		arr.erase(arr.begin() + smallestIndx);
 		newArr.push_back(temp);
 	}
@@ -24,9 +24,9 @@ vector<T> sortedVectorArr(vector<T> arr) {
 	return newArr;
 }
 
-template<typename T>
-int smallestElementIndx(vector<T> arr) {
-	T smallestValue = arr.at(0);
+template<typename A_Type>
+int smallestElementIndx(vector<A_Type> arr) {
+	A_Type smallestValue = arr.at(0);
 	int smallestValueIndx = 0;
 	int arrSize = arr.size();
 
@@ -34,7 +34,7 @@ int smallestElementIndx(vector<T> arr) {
 		return smallestValueIndx;
 
 	for (int i = 1; i < arrSize; i++) {
-		T currentValue = arr.at(i);
+		A_Type currentValue = arr.at(i);
 		if (currentValue < smallestValue) {
 			smallestValue = currentValue;
 			smallestValueIndx = i;
