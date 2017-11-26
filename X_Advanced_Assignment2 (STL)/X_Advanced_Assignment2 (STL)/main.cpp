@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <functional>
+#include <numeric>
 #include <vector>
 #include <string>
 
@@ -111,6 +112,17 @@ void assignment5(std::vector<double> numbers) {
 	std::cout << std::endl;
 }
 
+void assignment6(std::vector<double> numbers) {	
+	auto sum = std::accumulate(numbers.begin(), numbers.end(), 0.0);
+	auto av = sum / numbers.size();
+	auto product = std::accumulate(numbers.begin(), numbers.end(), 1.0, std::multiplies<double>());
+
+	std::cout << "Sum of all numbers: " << sum << std::endl;
+	std::cout << "Average of all numbers: " << av << std::endl;
+	std::cout << "Product of all numbers: " << product << std::endl;
+	std::cout << std::endl;
+}
+
 int main() {
 	std::vector<std::string> colours{ "red", "green", "white", "blue", "orange", "green", "orange", "black", "purple" };
 
@@ -147,7 +159,7 @@ int main() {
 
 	// 3) de som, het gemiddelde, en het product van alle getallen te berekenen
 	std::cout << "3 -> Find the sum, the average and the product of all the numbers: " << std::endl;
-	//https://stackoverflow.com/questions/28574346/find-average-of-input-to-vector-c
+	assignment6(numbers);
 
 	std::cin.get();
 	return 0;
